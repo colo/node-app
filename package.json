@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colo/node-app.git"
+  },
+  "author": "Luciano Bueno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colo/node-app/issues"
+  },
+  "homepage": "https://github.com/colo/node-app#readme",
+  "dependencies": {
+    "mootools": "^1.5.2"
+  }
+}
