@@ -192,7 +192,12 @@ module.exports = new Class({
 								
 								this.fireEvent(this.ON_LOAD_APP, [app, this]);
 								options.path = app_path;
-								app = new app(get_options(options));
+								try{
+									app = new app(get_options(options));
+								}
+								catch(e){
+									//console.log(e);
+								}
 								
 							}
 							else{//nodejs module
@@ -224,8 +229,13 @@ module.exports = new Class({
 						this.fireEvent(this.ON_LOAD_APP, [app, this]);
 						
 						options.path = app_path;
-								
-						app = new app(get_options(options));
+						
+						try{		
+							app = new app(get_options(options));
+						}
+						catch(e){
+							//console.log(e);
+						}
 					}
 					else{//nodejs module
 						////console.log('express app...nothing to do');
