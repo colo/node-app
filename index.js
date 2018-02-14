@@ -73,7 +73,8 @@ module.exports = new Class({
 		
 		
   },
-  
+  log: function(name, type, string){},
+  profile: function(profile){},
 	use: function(mount, app){
 		
 		this.fireEvent(this.ON_USE, [mount, app, this]);
