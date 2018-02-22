@@ -215,16 +215,26 @@ module.exports = new Class({
 				else if(path.extname( file ) == '.js'){// single js apps
 					
 					app = require(full_path);
-					id = path.basename(file, '.js');
+					//id = path.basename(file, '.js');
+					id = path.basename(wrk_dir);
 					
 					if(file == 'index.js'){
-						//mount = '/';
+						
+						mount[id] = {};
+						app_path = id;
+					
+						console.log(mount);
+						//throw new Error();
 					}
 					else{
-						//mount = '/'+id;
+						let name = path.basename(file, '.js');
 						mount[id] = {};
-						//app_path += '/'+id;
-						app_path += id;
+						mount[id][name] = {};
+						//app_path = id;
+						app_path = id+'/'+name;
+						
+						//console.log(mount);
+						
 					}
 					
 					if(typeOf(app) == 'class'){//mootools class
