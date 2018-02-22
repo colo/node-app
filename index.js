@@ -163,6 +163,7 @@ module.exports = new Class({
 				var app = null;
 				var id = '';//app id
 				var mount = {};
+				let app_path = '/';
 				
 				if(fs.statSync(full_path).isDirectory() == true){//apps inside dir
 					
@@ -173,7 +174,7 @@ module.exports = new Class({
 					
 					fs.readdirSync(full_path).forEach(function(file) {//read each file in directory
 						
-						var app_path = this.options.path;
+						app_path = this.options.path;
 						
 						if(path.extname(file) == '.js' && ! (file.charAt(0) == '.')){
 							
@@ -222,7 +223,8 @@ module.exports = new Class({
 					else{
 						//mount = '/'+id;
 						mount[id] = {};
-						app_path += '/'+id;
+						//app_path += '/'+id;
+						app_path += id;
 					}
 					
 					if(typeOf(app) == 'class'){//mootools class
