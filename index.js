@@ -223,7 +223,7 @@ module.exports = new Class({
 						mount[id] = {};
 						app_path = id;
 					
-						console.log(mount);
+						//console.log(mount);
 						//throw new Error();
 					}
 					else{
