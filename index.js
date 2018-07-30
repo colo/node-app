@@ -30,6 +30,13 @@ module.exports = new Class({
   },
   initialize: function(options){
 		
+		if(
+			this.options
+			&& this.options.path
+			&& this.options.path.indexOf('/') == 0
+		)
+			delete options.path
+			
 		this.setOptions(options);//override default options
 		
 		/**
