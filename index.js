@@ -150,9 +150,11 @@ var App = new Class({
 /**
  * https://stackoverflow.com/questions/17575790/environment-detection-node-js-or-browser
  **/
-var isNode=new Function("try {return this===global;}catch(e){return false;}");
+//var isNode=new Function("try {return this===global;}catch(e){return false;}");
+var isBrowser=new Function("try {return this===window;}catch(e){ return false;}");
 
-if(isNode()){
+
+if(isBrowser() === false){
 	App.implement({
 		load: function(wrk_dir, options){
 			options = options || {};
